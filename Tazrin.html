@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find the Treasure!</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+
+
+
+		.contain{
+			background-image: url(https://i.pinimg.com/originals/b1/da/c0/b1dac0470bdf2f7cc0c559599fba19f9.jpg);
+			height: 120vh;
+			width: 100%; 
+			
+
+
+		}
+
+		.gamebox{
+		    display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			background-color:  #141714;
+			display: inline-flex;
+			align-items: center;
+			flex-direction: column;
+			flex-wrap: wrap;
+			width: 60%;
+			max-height: 80%;
+			margin-top: 40px;
+			margin-left: 20%;
+			margin-right: 20%;
+
+	
+		
+		}
+
+		.text{
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			color: white;
+			padding: 10px;
+			font-size: 22px;
+		}
+
+		.commonbutton{
+			padding: 10px 20px;
+			background: transparent;
+			outline: none;
+			border: 2px solid #01ffdc;
+			cursor: pointer;
+			margin-top: 15px;
+			margin-left: 10px;
+			margin-bottom: 25px;
+			color:  #fbfcfc ;
+
+			}
+
+		#wintext{
+			color: white;
+			display: none;
+			
+		}
+
+		#keytext{
+			color: white;
+			display: none;
+		}
+
+
+		#box{
+			display: block;
+		}
+
+		.rainbow{
+		
+		animation: rainbow 2.5s linear;
+		animation-iteration-count: infinite;
+		}
+
+		.eidtext{
+		animation: fontbig 2.5s ease-in-out;
+		animation-fill-mode: forwards;
+
+		}
+
+		@keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0);
+		
+		}
+		8%{
+			color: rgb(255,127,0);
+			
+		}
+		16%{
+			color: rgb(255,255,0);
+		
+		}
+		25%{
+			color: rgb(127,255,0);
+			
+		}
+		33%{
+			color: rgb(0,255,0);
+			
+		}
+		41%{
+			color: rgb(0,255,127);
+			
+		}
+		50%{
+			color: rgb(0,255,255);
+			
+		}
+		58%{
+			color: rgb(0,127,255);
+			
+		}
+		66%{
+			color: rgb(0,0,255);
+			
+		}
+		75%{
+			color: rgb(127,0,255);
+			
+		}
+		83%{
+			color: rgb(255,0,255);
+			
+		}
+		91%{
+			color: rgb(255,0,127);
+			
+		}
+		}
+
+		@keyframes fontbig{
+		0%{
+			font-size: 20px;
+		}
+		100%{
+			
+			font-size: 60px;
+		}
+		}
+
+
+		.banner{
+			width: 60%;
+			height: 30vh;
+			position: relative;
+			top: 0%;
+			left: 50%;
+			transform: translate(-50%,0%);
+		}
+
+@media only screen and (max-width: 600px){
+		.text{
+			font-size: 16px;
+		}
+		.contain{
+			background: url(https://i.pinimg.com/originals/57/a1/cf/57a1cf2c30d763224f62dcfb0d527166.jpg);
+			background-size: cover;
+			height: 110vh;
+		}
+
+		.gamebox{
+			margin: 0;
+			margin-top: 100px;
+			width: 90%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			
+
+		}
+
+		.banner{
+			width: 100%;
+			height: 20vh;
+		}
+
+		@keyframes fontbig{
+		0%{
+			font-size: 20px;
+		}
+		100%{
+			
+			font-size: 40px;
+		}
+		}
+
+}
+
+	</style>
+</head>
+<body>
+	<div class="contain">
+		<img class="banner" src="bannerpc.png">
+		<div class="gamebox">
+			<div class="column">
+			<p class="text" id="text">A treasure is Hidden in the jungle</p> 
+			</div>
+			<div class="column">
+			<p class="text" id="gtext">Guess the lucky number between 1-20 to unlock the treasure. If it says try again then click ok and select another box. Best Of Luck!</p>
+			</div>
+			<div id="box">	
+
+				<button class="commonbutton" type="button" onclick="decodeprogram(1)">1</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(2)">2</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(3)">3</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(4)">4</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(5)">5</button>
+
+				<button class="commonbutton" type="button" onclick="decodeprogram(6)">6</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(7)">7</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(8)">8</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(9)">9</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(10)">10</button>
+
+				<button class="commonbutton" type="button" onclick="decodeprogram(11)">11</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(12)">12</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(13)">13</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(14)">14</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(15)">15</button>
+
+				<button class="commonbutton" type="button" onclick="decodeprogram(16)">16</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(17)">17</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(18)">18</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(19)">19</button>
+				<button class="commonbutton" type="button" onclick="decodeprogram(20)">20</button>
+
+
+			</div>
+			
+			<div id="keytext">
+				<p class="text">congratulations! You earned the key to the treasure. The KEY is..........YOUR NAME (last 6 words all small) !</p><br>
+				<P class="text"> Enter the key here : </p>
+				<form id="frm1">
+					KEY: 	<input type="password" name="key">
+							<input type="button" class="commonbutton" onclick="myFunction()" name="unlock" value="unlock">
+				</form>
+			</div>
+			<div id="wintext">
+				
+			<p class="text"><pre class="eidfont">	
+▬▬▬.◙.▬▬▬
+═▂▄▄▓▄▄▂
+◢◤ █▀▀████▄▄▄▄◢◤
+█▄ █ █▄ ███▀▀▀▀▀▀▀╬
+◥█████◤
+══╩══╩═
+╬═╬ 
+╬═╬ Assalamualaikum Zahra Parvin Apu
+╬═╬ Just dropped down to say
+╬═╬ 
+╬═╬
+╬═╬  <span class="rainbow"><span class="eidtext">Eid Mubarak</span></span>
+╬═╬☻/ 
+╬═╬/▌
+╬═╬/
+
+
+
+
+<i>If you like this work of mine<br> you can encourage me by giving eid salami<br>😊bkash 01970520224 <br>From, Samir Fazal</i>
+			</pre>
+			</p>
+
+		</div>
+
+	</div>
+
+
+</div>
+
+
+	<script type="text/javascript">
+
+		function randomIntFromRange(min, max) {
+		  return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+		
+		x = randomIntFromRange(1,10);
+		y = 0;
+		function decodeprogram(num) {
+			y = num;
+			if (x==y) {
+				window.alert("GOOD JOB");
+				document.getElementById("box").style.display="none";
+
+			  	document.getElementById("text").style.display="none";
+			  	document.getElementById("gtext").style.display="none";
+
+				document.getElementById("keytext").style.display="block";
+
+			}else{
+				window.alert("TRY AGAIN!!!")
+			}
+}
+		// function KEYcode(KValue){
+		// 	z=KValue;
+		// 	if (z==24) {
+		// 	document.getElementById("wintext").style.display="block";
+		// 	}
+		// }
+
+		function myFunction() {
+			  var x = document.getElementById("frm1");
+			  var key = x.elements[0].value;
+			  if (key=="tazrin") {
+			  	document.getElementById("keytext").style.display="none";
+			  	document.getElementById("text").style.display="none";
+			  	document.getElementById("gtext").style.display="none";
+			  	document.getElementById("wintext").style.display="block";
+			  }
+}
+
+
+	
+		
+
+		
+	</script>
+
+</body>
+</html>
+
+
+
